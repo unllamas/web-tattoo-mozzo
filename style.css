@@ -438,8 +438,8 @@ nav .social-media a:first-child{
 
 @media (max-width: 767.98px) {
 	.section-content{
-		/* background-color: yellow; */
-		/* width: 80%; */
+		background-color: yellow;
+		width: 100%;
 		display: flex;
 		margin: 0 auto;
 		/* flex-wrap: wrap-reverse; */
