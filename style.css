@@ -442,7 +442,7 @@ nav .social-media a:first-child{
 		width: 100%;
 		display: flex;
 		margin: 0 auto;
-		/* flex-wrap: wrap-reverse; */
+		flex-wrap: wrap;
 	}
 	.col-7{
 		/* flex: 1 0 0; */
