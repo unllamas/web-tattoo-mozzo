@@ -342,11 +342,12 @@ nav .social-media a:first-child{
 	}
 	#portfolio .col{
 		flex-basis: 100%;
-		margin-left: 5rem;
+		/* margin-left: 5rem; */
 	}
 	.img-portfolio{
 		width: 80%;
 		height: 350px;
+		float: right
 	}
 }
 
@@ -386,6 +387,9 @@ nav .social-media a:first-child{
 }
 
 @media (max-width: 767.98px) {
+	#contact-us:before{
+		display: none;
+	}
 	#contact-us{
 		/* display: none */
 		padding-left: 3rem;
