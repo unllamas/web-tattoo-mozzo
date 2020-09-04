@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stiky"></div>
+    
+    <nav>
+        <div class="cont-nav">
+            <a href="#" class="logo hover"><img src="img/logo.jpg" alt=""></a>
+            <div class="social-media">
+                <a href="https://www.facebook.com/Mozzotattoo/" target="_blank" class="hover">Facebook</a>
+                <a href="https://www.instagram.com/valentino_mozzo/" target="_blank" class="hover">Instagram</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <div class="languages">
+        <a href="#">ES</a>
+        <a href="#">EN</a>
+        <a href="#">IT</a>
+    </div> -->
+
+    <header id="header">
+        <div class="section-content">
+            <div class="head">
+                <h1 class="text-center">Mozzo Grume</h1>
+                <h2 class="text-center">Tattoo Artist</h2>
+                <img src="img/me.png" class="img-center" alt="">
+            </div>
+        </div>
+    </header>
+
+    <section id="about-me">
+        <div class="section-content">
+            <div class="col-7 col-text">
+                <h3 class="title-about-me">About me</h3>
+                <div class="context-about-me">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="img-about-me"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="section-content">
+            <div class="col">
+                <a href="https://www.instagram.com/p/CEhqH-3KiNs/" target="_blank" class="img-portfolio hover" style="background-image: url('img/tatus/1.jpg');"></a>
+                <a href="https://www.instagram.com/p/Bve_bqLg95Y/" target="_blank" class="img-portfolio hover" style="background-image: url('img/tatus/2.JPG');"></a>
+            </div>
+            <div class="col">
+                <a href="https://www.instagram.com/p/CBwBplOKMdu/" target="_blank" class="img-portfolio hover" style="background-image: url('img/tatus/3.jpg');"></a>
+                <a href="https://www.instagram.com/p/B9fG3-fgflh/" target="_blank" class="img-portfolio hover" style="background-image: url('img/tatus/4.jpg');"></a>
+            </div>
+            <div class="col">
+                <a href="https://www.instagram.com/p/Bzib1QRiR1r/" target="_blank" class="img-portfolio hover" style="background-image: url('img/tatus/5.jpg');"></a>
+                <a href="https://www.instagram.com/p/CAXu6DZqNQf/" target="_blank" class="img-portfolio hover" style="background-image: url('img/tatus/6.jpg');"></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-us">
+        <div class="section-content">
+            <div class="col">
+                <a href="https://api.whatsapp.com/send?phone=34657621168&text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20hablar%20contigo%20para%20un%20tatuaje%20:)" target="_blank" class="hover">
+                    <div class="text-contact-us">
+                        <h4 class="text-center">Get in touch</h4>
+                        <h5 class="text-center">Bilbao, Spain</h5>
+                    </div>
+                    <span class="circle-text" id="circle-text">Contact us contact us contact us contact us contact us contact us</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="cursor"></div>
+    <div class="cursorFollower"></div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/ScrollTrigger.min.js"></script>
+    <script src="js/circletype.min.js"></script>
+    <script>
+        var cursor = $('.cursor'),
+			follower = $('.cursorFollower'),
+			positionX = 0,
+			positionY = 0,
+			mouseX = -40,
+            mouseY = -40;
+            
+        $(document).mousemove(function(e){
+			mouseX = e.pageX;
+			mouseY = e.pageY;
+		});
+
+		TweenMax.to({}, 0.016, {
+			repeat: -1,
+			onRepeat: function(){
+				positionX += (mouseX - positionX) / 9;
+				positionY += (mouseY - positionY) / 9;
+
+				TweenMax.set(cursor, {
+					css: {
+						left: mouseX,
+						top: mouseY
+					}
+				});
+
+				TweenMax.set(follower, {
+					css: {
+						left: positionX - 11,
+						top: positionY - 11
+					}
+				})
+			}
+		});
+
+		$('.hover').on('mouseenter', function(){
+			cursor.addClass('active')
+			follower.addClass('active')
+		})
+		$('.hover').on('mouseleave', function(){
+			cursor.removeClass('active')
+			follower.removeClass('active')
+		})
+
+        // $('.circle-text').circleType({radius: 800})
+        new CircleType(document.getElementById('circle-text'));
+    </script>
+</body>
+</html>
