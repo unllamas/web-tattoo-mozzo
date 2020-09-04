@@ -90,52 +90,6 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/ScrollTrigger.min.js"></script>
     <script src="js/circletype.min.js"></script>
-    <script>
-        var cursor = $('.cursor'),
-			follower = $('.cursorFollower'),
-			positionX = 0,
-			positionY = 0,
-			mouseX = -40,
-            mouseY = -40;
-            
-        $(document).mousemove(function(e){
-			mouseX = e.pageX;
-			mouseY = e.pageY;
-		});
-
-		TweenMax.to({}, 0.016, {
-			repeat: -1,
-			onRepeat: function(){
-				positionX += (mouseX - positionX) / 9;
-				positionY += (mouseY - positionY) / 9;
-
-				TweenMax.set(cursor, {
-					css: {
-						left: mouseX,
-						top: mouseY
-					}
-				});
-
-				TweenMax.set(follower, {
-					css: {
-						left: positionX - 11,
-						top: positionY - 11
-					}
-				})
-			}
-		});
-
-		$('.hover').on('mouseenter', function(){
-			cursor.addClass('active')
-			follower.addClass('active')
-		})
-		$('.hover').on('mouseleave', function(){
-			cursor.removeClass('active')
-			follower.removeClass('active')
-		})
-
-        // $('.circle-text').circleType({radius: 800})
-        new CircleType(document.getElementById('circle-text'));
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
