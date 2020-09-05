@@ -40,7 +40,8 @@ var tl_contact_us = gsap.timeline({
 tl_menu.from('.logo', { y: 100, duration: .7, opacity: 0 }).from('.social-media a', { x: -100, duration: .8, opacity: 0 })
 tl_header.from('.head img', { y: 50, duration: .5, opacity: 0, delay: .5 }).from('.head h1', { y: 60, duration: .7, opacity: 0 }).from('.head h2', { y: 70, duration: .9, opacity: 0 })
 tl_about_me.from('.img-about-me', { y: 150, duration: .7, opacity: 0 }).from('.title-about-me', { y: 125, duration: .9, opacity: 0 }).from('.context-about-me p', { y: 100, duration: 1.1, opacity: 0 })
-tl_portfolio.from('.img-portfolio-top', { y: 200, duration: 1.1, opacity: 0, delay: 1 }).from('.img-porfolio-bottom', { y: 200, duration: 1.3, opacity: 0 })
+tl_portfolio
+.from('.col-first', { y: 125, duration: 1.1, opacity: 0, delay: .5 }).from('.col-second', { y: 125,  duration: 1.3,  opacity: 0 }).from('.col-third', { y: 125, duration: 1.5, opacity: 0 })
 tl_contact_us.from('#circle-text', { y: 100, duration: 1.3, opacity: 0 }).from('.text-contact-us h4', { y: 50, duration: .5, opacity: 0 }).from('.text-contact-us h5', { y: 75, duration: .7, opacity: 0 })
 
 TweenMax.to({}, 0.016, {
@@ -66,12 +67,23 @@ onRepeat: function(){
 });
 
 $('.hover').on('mouseenter', function(){
-cursor.addClass('active')
-follower.addClass('active')
+    cursor.addClass('active')
+    follower.addClass('active')
 })
+
 $('.hover').on('mouseleave', function(){
-cursor.removeClass('active')
-follower.removeClass('active')
+    cursor.removeClass('active')
+    follower.removeClass('active')
+})
+
+$('.hover-img').on('mouseenter', function(){
+    cursor.addClass('active-img')
+    follower.addClass('active-img')
+})
+
+$('.hover-img').on('mouseleave', function(){
+    cursor.removeClass('active-img')
+    follower.removeClass('active-img')
 })
 
 // $('.circle-text').circleType({radius: 800})
