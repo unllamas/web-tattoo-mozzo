@@ -295,7 +295,7 @@ nav .social-media a:first-child{
 .img-about-me{
 	width: 23rem;
 	height: 32rem;
-	background-image: url('img/about-me.jpeg');
+	background-image: url('img/about-me.jpg');
 	background-size: cover;
 }
 #about-me p{
