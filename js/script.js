@@ -12,32 +12,36 @@ mouseY = e.pageY;
 
 var tl_menu = gsap.timeline();
 var tl_header = gsap.timeline();
-tl_menu.from('.logo', {
-    y: 100,
-    duration: .7,
-    opacity: 0
-}).from('.social-media a', {
-    x: -100,
-    duration: .8,
-    opacity: 0
-})
+var tl_about_me = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#about-me',
+        start: 'top center',
+        end: 'bottom center',
+        // markers: true
+    }
+});
+var tl_portfolio = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#portfolio',
+        start: 'top center',
+        end: 'bottom center',
+        // markers: true
+    }
+});
+var tl_contact_us = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#contact-us',
+        start: 'top center',
+        end: 'bottom center',
+        // markers: true
+    }
+});
 
-tl_header.from('.head img', {
-    y: 50,
-    duration: .5,
-    opacity: 0,
-    delay: .5
-}).from('.head h1', {
-    y: 60,
-    duration: .7,
-    opacity: 0
-}).from('.head h2', {
-    y: 70,
-    duration: .9,
-    opacity: 0
-})
-
-
+tl_menu.from('.logo', { y: 100, duration: .7, opacity: 0 }).from('.social-media a', { x: -100, duration: .8, opacity: 0 })
+tl_header.from('.head img', { y: 50, duration: .5, opacity: 0, delay: .5 }).from('.head h1', { y: 60, duration: .7, opacity: 0 }).from('.head h2', { y: 70, duration: .9, opacity: 0 })
+tl_about_me.from('.img-about-me', { y: 150, duration: .7, opacity: 0 }).from('.title-about-me', { y: 125, duration: .9, opacity: 0 }).from('.context-about-me p', { y: 100, duration: 1.1, opacity: 0 })
+tl_portfolio.from('.img-portfolio-top', { y: 200, duration: 1.1, opacity: 0, delay: 1 }).from('.img-porfolio-bottom', { y: 200, duration: 1.3, opacity: 0 })
+tl_contact_us.from('#circle-text', { y: 100, duration: 1.3, opacity: 0 }).from('.text-contact-us h4', { y: 50, duration: .5, opacity: 0 }).from('.text-contact-us h5', { y: 75, duration: .7, opacity: 0 })
 
 TweenMax.to({}, 0.016, {
 repeat: -1,

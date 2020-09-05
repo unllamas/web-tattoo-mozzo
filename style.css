@@ -367,6 +367,18 @@ nav .social-media a:first-child{
 	display: block;
 	margin-top: -11rem;
 	z-index: 2;
+	/* animation-name: circle-text;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear; */
+}
+@keyframes circle-text{
+	0%{
+		transform: rotate(0)
+	}
+	100%{
+		transform: rotate(360deg);
+	}
 }
 
 .text-contact-us{
