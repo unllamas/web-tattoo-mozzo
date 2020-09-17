@@ -1,13 +1,16 @@
+const luxy = require('./luxy.js')
+const circleType = require('./circletype.min.js')
+
 var cursor = $('.cursor'),
-follower = $('.cursorFollower'),
-positionX = 0,
-positionY = 0,
-mouseX = -40,
-mouseY = -40;
+    follower = $('.cursorFollower'),
+    positionX = 0,
+    positionY = 0,
+    mouseX = -40,
+    mouseY = -40;
 
 $(document).mousemove(function(e){
-mouseX = e.pageX;
-mouseY = e.pageY;
+    mouseX = e.pageX;
+    mouseY = e.pageY;
 });
 
 var tl_menu = gsap.timeline();
@@ -31,7 +34,7 @@ var tl_portfolio = gsap.timeline({
 var tl_contact_us = gsap.timeline({
     scrollTrigger: {
         trigger: '#contact-us',
-        start: 'top center',
+        start: '-200px center',
         end: 'bottom center',
         // markers: true
     }
@@ -86,5 +89,27 @@ $('.hover-img').on('mouseleave', function(){
     follower.removeClass('active-img')
 })
 
+
 // $('.circle-text').circleType({radius: 800})
-new CircleType(document.getElementById('circle-text'));
+new circleType(document.getElementById('circle-text'));
+// luxy.init();
+
+const body = document.body,
+scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+height = scrollWrap.getBoundingClientRect().height - 1,
+speed = 0.04;
+
+var offset = 0;
+
+body.style.height = Math.floor(height) + "px";
+
+function smoothScroll() {
+    offset += (window.pageYOffset - offset) * speed;
+
+    var scroll = "translateY(-" + offset + "px) translateZ(0)";
+    scrollWrap.style.transform = scroll;
+
+    callScroll = requestAnimationFrame(smoothScroll);
+}
+
+smoothScroll();
