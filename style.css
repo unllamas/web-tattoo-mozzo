@@ -491,6 +491,7 @@ nav .social-media a:first-child{
 .col{
 	flex: 1 0 0;
 	z-index: 100;
+	padding: 1rem;
 }
 .col:nth-child(2){
 	margin-top: 10rem;
@@ -527,21 +528,44 @@ nav .social-media a:first-child{
 
 	.col{
 		/* display: flex; */
-		grid-gap: 2rem;
+		/*grid-gap: 2rem;*/
+	}
+
+	#portfolio .section-content{
+		flex-wrap: wrap;
 	}
 
 	#portfolio .col{
-		width: 50%;
+		flex-basis: 50%;
+		position: relative;
 	}
 
 	#portfolio .col > a:first-child{
-		margin-top: -2rem;
+		/*margin-top: -2rem;*/
 	}
 	#portfolio .col > a:last-child{
-		margin-top: 3rem;
+		/*margin-top: 3rem;*/
 	}
 
 	#portfolio .col:nth-child(2){
+		margin-top: 0;
+	}
+
+	#portfolio .section-content .col:nth-child(3){
+		display: flex;
+	}
+
+	#portfolio .section-content .col:nth-child(3) a{
+		display: flex;
+		flex-basis: 50%;
+		position: relative;
+	}
+
+	#portfolio .section-content .col:nth-child(3) a:first-child{
+		/*padding: 1rem;*/
+	}
+
+	#portfolio .section-content .col:nth-child(3) a:last-child{
 		margin-top: 0;
 	}
 }
