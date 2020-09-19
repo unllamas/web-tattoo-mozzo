@@ -15,6 +15,11 @@ $(document).mousemove(function(e){
 
 var tl_menu = gsap.timeline();
 var tl_header = gsap.timeline();
+window.addEventListener('load',function(){
+    document.querySelector('body').classList.add("loaded") 
+    tl_menu.from('.logo', { y: 100, duration: .7, opacity: 0, delay: 1 }).from('.social-media a', { x: -100, duration: .8, opacity: 0 })
+    tl_header.from('.head img', { y: 50, duration: .5, opacity: 0, delay: .5 }).from('.head h1', { y: 60, duration: .7, opacity: 0 }).from('.head h2', { y: 70, duration: .9, opacity: 0 })
+});
 var tl_about_me = gsap.timeline({
     scrollTrigger: {
         trigger: '#about-me',
@@ -40,8 +45,6 @@ var tl_contact_us = gsap.timeline({
     }
 });
 
-tl_menu.from('.logo', { y: 100, duration: .7, opacity: 0 }).from('.social-media a', { x: -100, duration: .8, opacity: 0 })
-tl_header.from('.head img', { y: 50, duration: .5, opacity: 0, delay: .5 }).from('.head h1', { y: 60, duration: .7, opacity: 0 }).from('.head h2', { y: 70, duration: .9, opacity: 0 })
 tl_about_me.from('.img-about-me', { y: 150, duration: .7, opacity: 0 }).from('.title-about-me', { y: 125, duration: .9, opacity: 0 }).from('.context-about-me p', { y: 100, duration: 1.1, opacity: 0 })
 tl_portfolio
 .from('.col-first', { y: 125, duration: 1.1, opacity: 0, delay: .5 }).from('.col-second', { y: 125,  duration: 1.3,  opacity: 0 }).from('.col-third', { y: 125, duration: 1.5, opacity: 0 })

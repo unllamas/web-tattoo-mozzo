@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url('img/bg.jpg');
+	background-image: url('/bg.c04a5f46.jpg');
 	background-size: 100%;
 	background-position: top center;
 	background-repeat: no-repeat;
@@ -315,7 +315,7 @@ nav .social-media a:first-child{
 .img-about-me{
 	width: 23rem;
 	height: 32rem;
-	background-image: url('img/about-me.jpg');
+	background-image: url('/about-me.a87b3793.jpg');
 	background-size: cover;
 }
 #about-me .context-about-me{
@@ -638,3 +638,5 @@ nav .social-media a:first-child{
 	transform:translateY(-100%);
 	transition: all 0.3s 1s ease-out;
 }
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
