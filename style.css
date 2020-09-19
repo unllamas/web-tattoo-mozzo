@@ -318,6 +318,9 @@ nav .social-media a:first-child{
 	background-image: url('img/about-me.jpg');
 	background-size: cover;
 }
+#about-me .context-about-me{
+	padding-right: 1rem;
+}
 #about-me p{
 	padding-left: 5rem;
 	line-height: 2rem;
@@ -337,6 +340,7 @@ nav .social-media a:first-child{
 	}
 	#about-me .context-about-me{
 		padding-left: 1rem;
+		padding-right: .5rem;
 		line-height: 2rem;
 		display: block;
 		width: 140%;
@@ -370,7 +374,7 @@ nav .social-media a:first-child{
 		/* margin-left: 5rem; */
 	}
 	.col > .img-portfolio:first-child {
-		margin-bottom: 2rem
+		margin-bottom: 0
 	}
 	.img-portfolio{
 		width: 80%;
@@ -451,7 +455,7 @@ nav .social-media a:first-child{
 	.circle-text{
 		/* display: none */
 		font-size: 1rem;
-		margin-top: -12rem;
+		margin-top: -11rem;
 		margin-right: 2rem
 	}
 
@@ -461,6 +465,7 @@ nav .social-media a:first-child{
 
 	.text-contact-us h4{
 		font-size: 3.2rem;
+		padding-bottom: 0;
 	}
 
 	.text-contact-us h5{
@@ -479,11 +484,9 @@ nav .social-media a:first-child{
 /* Generales */
 .section-content{
 	max-width: 1160px;
-	/* padding: 0px 10%; */
 	display: flex;
-	grid-gap: 20px;
+	/* grid-gap: 20px; */
 	margin: 0px auto;
-	/* background-color: blue; */
 	flex-direction: row;
 }
 .col-7{
@@ -495,13 +498,16 @@ nav .social-media a:first-child{
 .col{
 	flex: 1 0 0;
 	z-index: 100;
-	padding: 1rem;
+	/* padding: 0 1rem; */
 }
 .col:nth-child(2){
 	margin-top: 10rem;
 }
 
 @media (max-width: 767.98px) {
+	#portfolio .section-content{
+		grid-gap: 0;
+	}
 	.section-content{
 		width: 100%;
 		display: flex;
@@ -530,7 +536,7 @@ nav .social-media a:first-child{
 	}
 	#portfolio .section-content{
 		flex-direction: row;
-		grid-gap: 2rem;
+		grid-gap: 0;
 	}
 
 	#portfolio .section-content{
